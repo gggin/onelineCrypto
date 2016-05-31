@@ -1,2 +1,7 @@
 # onelineCrypto
-oneline code to encryt and decrypt with MD5 SHA256
+oneline code to encryt and decrypt for nodejs
+
+### utility
+
+MD5
+SHA256
