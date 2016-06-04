@@ -1,6 +1,6 @@
 {
   "name": "oneline-crypto",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "oneline code to encryt and decrypt",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,9 @@
   "keywords": [
     "crypto",
     "decrypt",
-    "encrypt"
+    "encrypt",
+    "aes",
+    "md5"
   ],
   "author": "new.epee@gmail.com",
   "license": "MIT",
