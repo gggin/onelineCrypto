@@ -1,0 +1,24 @@
+{
+  "name": "oneline-crypto",
+  "version": "1.0.0",
+  "description": "oneline code to encryt and decrypt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gggin/onelineCrypto.git"
+  },
+  "keywords": [
+    "crypto",
+    "decrypt",
+    "encrypt"
+  ],
+  "author": "new.epee@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gggin/onelineCrypto/issues"
+  },
+  "homepage": "https://github.com/gggin/onelineCrypto#readme"
+}
