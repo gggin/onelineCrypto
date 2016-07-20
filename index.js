@@ -1,12 +1,3 @@
-/**
- * Created by fm369 on 6/4/2016.
- */
-
-
-/**
- * Created by GGGin on 2015/11/16.
- */
-
 var crypto = require('crypto');
 
 function decryption(data, key) {
@@ -61,10 +52,21 @@ var MD5 = function (str) {
     return file1_sha256.digest('hex');
 };
 
+var easyEn = function(str, password) {
+    var md5 = MD5(password);
+    return encryption(str, md5);
+};
+
+var easyDe = function(str, password) {
+    var md5 = MD5(password);
+    return decryption(str, md5);
+};
+
 module.exports = {
     decryptAES :  decryption,
     encryptAES :  encryption,
     SHA256 : SHA256,
-    MD5 : MD5
-    //decryptBlowFish : hello.hello
+    MD5 : MD5,
+    easyEn : easyEn,
+    easyDe : easyDe
 };
