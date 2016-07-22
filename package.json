@@ -1,6 +1,6 @@
 {
   "name": "oneline-crypto",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "oneline code to encryt and decrypt",
   "main": "index.js",
   "scripts": {
