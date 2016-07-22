@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/gggin/onelineCrypto/issues"
   },
-  "homepage": "https://github.com/gggin/onelineCrypto#readme"
+  "homepage": "https://github.com/gggin/onelineCrypto#readme",
+  "dependencies": {
+    "node-rsa": "^0.4.0"
+  }
 }
