@@ -1,6 +1,10 @@
 # onelineCrypto
 oneline code to encryt and decrypt for nodejs
 
+support both browser and node
+
+you can just webpack entry.js bundle.js --module-bind="json=json-loader"
+then bundle.js can run in browser!!!
 ### utility
 
 MD5
