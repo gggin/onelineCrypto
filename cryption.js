@@ -1,5 +1,5 @@
 var NodeRSA = require('node-rsa');
-var fs = require('fs');
+//var fs = require('fs');
 var cryp = require('./base')
 
 var keyToStringInObject = function (key, password) {
@@ -9,7 +9,7 @@ var keyToStringInObject = function (key, password) {
     pri = cryp.easyEn(pri.toString(), password);
     return { pub: pub, pri: pri };
 }
-
+/*
 var keyGeneratorToFiles_ = function (password, publicPath, privatePath) {
     var key = new NodeRSA({ b: 1024 });
     var o = keyToStringInObject(key, password);
@@ -18,17 +18,26 @@ var keyGeneratorToFiles_ = function (password, publicPath, privatePath) {
     fs.writeFileSync(publicPath, pub);
     fs.writeFileSync(privatePath, pri);
 };
+*/
+var loadPrivateKeyFromString = function (data, password) {
+    return new NodeRSA(cryp.easyDe(data, password));
+};
 
+var loadPublicKeyFromString = function (data) {
+    return new NodeRSA(data.toString('utf8'));
+};
+
+/*
 var loadPrivateKeyFromFile_ = function (filePath, password) {
     var data = fs.readFileSync(filePath, 'utf8');
-    return new NodeRSA(cryp.easyDe(data, password));
+    return loadPrivateKeyFromString(data, password);
 };
 
 var loadPublicKeyFromFile_ = function (filePath) {
     var data = fs.readFileSync(filePath, 'utf8');
-    return new NodeRSA(data.toString('utf8'));
+    return loadPublicKeyFromString(data);
 };
-
+*/
 //keyGeneratorToFiles_("123");
 
 //var pkey = loadPrivateKeyFromFile_('./private.txt', '123');
@@ -45,11 +54,13 @@ console.log(moment().format());
 
 module.exports = {
     keyToStringInObject: keyToStringInObject,
-    keyGeneratorToFiles_: keyGeneratorToFiles_,
-    loadPrivateKeyFromFile_: loadPrivateKeyFromFile_,
-    loadPublicKeyFromFile_: loadPublicKeyFromFile_,
+    //keyGeneratorToFiles_: keyGeneratorToFiles_,
+    //loadPrivateKeyFromFile_: loadPrivateKeyFromFile_,
+    //loadPublicKeyFromFile_: loadPublicKeyFromFile_,
+    loadPublicKeyFromString: loadPublicKeyFromString,
+    loadPrivateKeyFromString: loadPrivateKeyFromString,
     encryptByPublicKey:
-        function (key, data) { return key.encrypt(data, 'base64'); },
+    function (key, data) { return key.encrypt(data, 'base64'); },
     decryptByPrivateKey:
-        function (key, data) { return key.decrypt(data, 'utf8'); }
+    function (key, data) { return key.decrypt(data, 'utf8'); }
 }

@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+var crypto = require('browserify-aes');
 
 function decryption(data, key) {
     if (!key) throw "empty key!";
