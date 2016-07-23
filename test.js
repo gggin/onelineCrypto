@@ -30,6 +30,8 @@ var result = rsa.encryptByPublicKey(pub, 'data content');
 console.log(result);
 var deResult = rsa.decryptByPrivateKey(pri, result);
 console.log(deResult)
+window.enp = rsa.encryptByPublicKey;
+window.lop = rsa.loadPublicKeyFromString;
 
 
 
