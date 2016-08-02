@@ -15,7 +15,8 @@
     "decrypt",
     "encrypt",
     "aes",
-    "md5"
+    "md5",
+    "rsa"
   ],
   "author": "new.epee@gmail.com",
   "license": "MIT",
